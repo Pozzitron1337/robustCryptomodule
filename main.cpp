@@ -16,11 +16,11 @@ int main(int argc, char *argv[]){
                     {0,1,1,1,0,1},
                     {0,0,0,1,1,0}};
     matrix<int,s,s> *A=new matrix<int,s,s>(a);
-    
+    matrix<int,s,s> B(*A);
     relayCircuit<s> r{2,*A};
    
-    r.count_paths();
-    r.built_pathes();
+    cout<<r.count_paths()<<endl;
+    //r.built_pathes();
 
     
     return 0;

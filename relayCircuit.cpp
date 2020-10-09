@@ -40,7 +40,7 @@ public:
             size_t sum=0;
             w[v]=true;
             for(size_t i=0;i<maxRelays;i++){
-                if(adjacencyMatrix.getElement(v,i)==1&&i<v){
+                if(adjacencyMatrix(v,i)&&i<v){
                     sum+=count(i,w);
                 }
             }
@@ -57,7 +57,6 @@ public:
             w[i]=false;
         }
         auto res= count(maxRelays-1,w);
-        //cout<<res<<endl;
         return res;
     }
 
@@ -77,16 +76,17 @@ public:
 
     }
     //built the pathes form begin to maxRelays-1
-    void built_pathes(){
+    vector<vector<size_t>> built_pathes(){
         vector<size_t> temp_vector;
         temp_vector.push_back(maxRelays-1);
         built(maxRelays-1,temp_vector);
         for(auto i:pathes){
             for(auto j:i){
-                printf("%3d",j);
+                printf("%3ld",j);
             }
             printf("\n");
         }
+        return pathes;
     }
 
 

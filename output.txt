@@ -1,0 +1,8 @@
+g++ -g main.cpp -o main.o 
+./main.o
+1
+0
+0
+0
+0
+0

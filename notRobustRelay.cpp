@@ -27,6 +27,8 @@ public:
     notRobustRelay(size_t maxStates_);
     notRobustRelay(const notRobustRelay& r);
     double** getTransitMatrix();
+    double getStateProbability();
+    size_t getState();
     void changeState(size_t newState);
     void printTransitMatrix();
     void testTransitMatrix();
@@ -110,6 +112,9 @@ double** notRobustRelay::getTransitMatrix(){
     return transitMatrix;
 }
 
+double notRobustRelay::getStateProbability(){
+    return transitMatrix[state][state];
+}
 
 void notRobustRelay::printTransitMatrix()
 {
@@ -141,7 +146,7 @@ void notRobustRelay::testTransitMatrix()
         for(size_t j=0;j<2*maxStates;j++){
             sum+=transitMatrix[i][j];
         }
-        cout<<"Row "<<i+1<<" sum = "<<sum<<endl;
+        cout<<"Row "<<i<<" sum = "<<sum<<endl;
     }
     
     for (size_t i = 0; i < maxStates; i++){
@@ -164,6 +169,10 @@ void notRobustRelay::testTransitMatrix()
 double notRobustRelay::getTransitMatrixElement(size_t i,size_t j){
     return transitMatrix[i][j];
 }
+
+size_t notRobustRelay::getState(){
+    return state;
+} 
 
 void notRobustRelay::clearTransitMatrix()
 {

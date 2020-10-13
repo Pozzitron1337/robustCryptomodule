@@ -1,8 +1,56 @@
 g++ -g main.cpp -o main.o 
 ./main.o
-1
-0
-0
-0
-0
-0
+           state_0    state_1    state_2    state_3
+state_0 | 0.466311   0.333498   0.100095   0.100095
+state_1 | 0.505454   0.294355   0.100095   0.100095
+state_2 | 0.566407   0.333498          0   0.100095
+state_3 | 0.505454   0.394451   0.100095          0
+Row 0 sum = 1
+Row 1 sum = 1
+Row 2 sum = 1
+Row 3 sum = 1
+Right state_0 probability sum: 0.799809
+Right state_1 probability sum: 0.799809
+Error state_0 probability sum: 0.200191
+Error state_1 probability sum: 0.200191
+State of relay_0 : 0
+State of relay_1 : 0
+State of relay_2 : 0
+State of relay_3 : 0
+A_1 : 2
+h = 0.49773
+
+A_2 : 1
+h = 0.715176
+
+           state_0    state_1    state_2    state_3
+state_0 | 0.466311   0.333498   0.100095   0.100095
+state_1 | 0.505454   0.294355   0.100095   0.100095
+state_2 | 0.566407   0.333498          0   0.100095
+state_3 | 0.505454   0.394451   0.100095          0
+Row 0 sum = 1
+Row 1 sum = 1
+Row 2 sum = 1
+Row 3 sum = 1
+Right state_0 probability sum: 0.799809
+Right state_1 probability sum: 0.799809
+Error state_0 probability sum: 0.200191
+Error state_1 probability sum: 0.200191
+State of relay_0 : 0
+State of relay_1 : 0
+State of relay_2 : 0
+State of relay_3 : 0
+State of relay_4 : 0
+State of relay_5 : 0
+A_1 : 0
+h = 0
+
+A_2 : 2
+h = 0.123868
+
+A_3 : 4
+h = 0.340327
+
+A_4 : 1
+h = 0.38761
+

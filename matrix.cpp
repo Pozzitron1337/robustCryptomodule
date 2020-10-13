@@ -131,10 +131,10 @@ class matrix{
             string init_table_indexes="%"+to_string(maxTab_size_t)+"s |";
             printf(init_table_indexes.c_str()," ");
             for(size_t i=0;i<col_size;i++){
-                s=to_string(i);
+                s="col_"+to_string(i);
                 buf=new char[s.length()+1];
                 strcpy(buf,s.c_str());
-                printf("%6s",buf);
+                printf("%7s",buf);
                 delete buf;
             }
             printf("\n");
@@ -144,7 +144,7 @@ class matrix{
                     s=to_string(this->M[i][j]);
                     buf=new char[s.length()+1];
                     strcpy(buf,s.c_str());
-                    printf("%6s",buf);
+                    printf("%7s",buf);
                     delete buf;
                 }
                 printf("\n");

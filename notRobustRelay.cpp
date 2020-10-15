@@ -24,7 +24,7 @@ private:
     void    initTransitMatrix(double coeficient,size_t error_range_modulus,size_t range_probability);
 public:
 
-    notRobustRelay(size_t maxStates_);
+    notRobustRelay(size_t maxStates_,double rand_coeficient);
     notRobustRelay(const notRobustRelay& r);
     double** getTransitMatrix();
     double getStateProbability();
@@ -87,7 +87,10 @@ void notRobustRelay::initTransitMatrix(double coeficient=11.0,size_t error_range
     }
 }
 
-notRobustRelay::notRobustRelay(size_t maxStates)
+/*
+* if we want that error be in 0.2 to 0.3, the rand_coeficient should be equal 11.0
+*/
+notRobustRelay::notRobustRelay(size_t maxStates,double rand_coeficient=11.0)
 {
     this->maxStates=maxStates;
     this->state=0;
@@ -95,7 +98,7 @@ notRobustRelay::notRobustRelay(size_t maxStates)
     for(size_t i=0;i<2*maxStates;i++){
         this->transitMatrix[i]=new double [2*maxStates];
     }
-    initTransitMatrix();
+    initTransitMatrix(rand_coeficient);
 }
 
 notRobustRelay::notRobustRelay(const notRobustRelay& r)

@@ -21,17 +21,24 @@ private:
     //the list of pathes from begin to maxRelays-1
     vector<vector<size_t>> pathes;
 
-
-    //map form path length to path
-    map<size_t,vector<vector<size_t>>> pathLength_to_pathes;
 public:
-    relayCircuit(matrix<int,maxRelays,maxRelays> adjacencyMatrix){
-        this->state=0;
+    
+    relayCircuit(matrix<int,maxRelays,maxRelays> adjacencyMatrix,size_t init_state=0){
+        this->state=init_state;
         this->adjacencyMatrix=adjacencyMatrix;
         notRobustRelay r{maxState};
         for(size_t i=0;i<maxRelays;i++){
             relays.push_back(notRobustRelay{r});
         }
+        built_pathes();
+    }
+    relayCircuit(matrix<int,maxRelays,maxRelays> adjacencyMatrix,notRobustRelay r,size_t init_state=0){
+        this->state = init_state;
+        this->adjacencyMatrix=adjacencyMatrix;
+        for(size_t i=0;i<maxRelays;i++){
+            relays.push_back(notRobustRelay{r});
+        }
+        
         built_pathes();
     }
     ~relayCircuit(){
@@ -92,20 +99,7 @@ public:
         vector<size_t> temp_vector;
         temp_vector.push_back(maxRelays-1);
         built(maxRelays-1,temp_vector);
-        fill_mapping_from_pathLength_to_pathes();
         return pathes;
-    }
-
-    void printMap(){
-        for (auto it = pathLength_to_pathes.begin(); it != pathLength_to_pathes.end(); it++) {
-            for(auto i:it->second){
-                cout<<"Len = "<<it->first<<" :{ ";
-                for(auto j:i){
-                    cout<< j<<", " ;
-                }
-                cout<<" }"<< endl;
-            }
-        }
     }
 
     void printPathes(){
@@ -130,10 +124,11 @@ public:
         }
         result.push_back(t);
         auto it=t.end()-1;//pointer to last element
-        auto maxRelayNumber=maxRelays-2;//minus 0 and maxRelays-1
-        while ((*t.begin())!=maxRelayNumber-len+1)
+        auto preMaxRelayNumber=maxRelays-2;//minus 0 and maxRelays-1
+        auto endLoopStatement=preMaxRelayNumber-len+1;
+        while ((*t.begin())!=endLoopStatement)
         {
-            if(*it!=maxRelayNumber){
+            if(*it!=preMaxRelayNumber){
                 *it=(*it)+1;
                 result.push_back(t);
             }
@@ -151,14 +146,7 @@ public:
                 result.push_back(t);
                 it=t.end()-1;
             }
-            
         }
-        /*for(auto i:result){
-            for(auto j:i){
-                cout<<j<<" ";
-            }
-            cout<<endl;
-        }*/
         return result;
     }
 
@@ -184,6 +172,11 @@ public:
         return result;
     }
 
+    /*examples:
+    * <1> is subvector of <1,2,4>
+    * <2,3> is subvector of <1,2,3,5>
+    * <2,3> is not subvector of <2,4,5>
+    */
     bool isSubvector(vector<size_t> subvect,vector<size_t> vect){
         if(subvect.size()>vect.size()){
             return false;
@@ -223,18 +216,12 @@ public:
         }  
     }
 
-    void fill_mapping_from_pathLength_to_pathes(){   
-        for(auto i:pathes){
-            pathLength_to_pathes[i.size()-1].push_back(i);
-        }
-        
-    }
-
     void showRelayParametrs(){
+        cout<<"Relay properties:"<<endl;
         relays[0].printTransitMatrix();
         relays[0].testTransitMatrix();
         for(size_t i=0;i<maxRelays;i++){
-            cout<<"State of relay_"<<i<<" : "<<relays[i].getState()<<endl;
+            cout<<"State of relay_"<<i<<" = "<<relays[i].getState()<<endl;
         }
     }
     
@@ -255,7 +242,8 @@ public:
             }
             p=relays[n].getStateProbability();
             h+=A*pow(p,n)*pow(1-p,maxRelays-2-n);
-            cout<<"A_"<<n<<" : "<<A<<endl;
+            cout<<"A_"<<n<<" = "<<A<<endl;
+            cout<<"p = "<<p<<endl;
             cout<<"h = "<<h<<endl<<endl;
             A=0;
         }

@@ -1,56 +1,100 @@
 g++ -g main.cpp -o main.o 
 ./main.o
+--------------------------------------------------
+Relay properties:
            state_0    state_1    state_2    state_3
-state_0 | 0.466311   0.333498   0.100095   0.100095
-state_1 | 0.505454   0.294355   0.100095   0.100095
-state_2 | 0.566407   0.333498          0   0.100095
-state_3 | 0.505454   0.394451   0.100095          0
+state_0 | 0.405098   0.300535   0.147184   0.147184
+state_1 | 0.405806   0.299826   0.147184   0.147184
+state_2 | 0.552282   0.300535          0   0.147184
+state_3 | 0.405806    0.44701   0.147184          0
 Row 0 sum = 1
 Row 1 sum = 1
 Row 2 sum = 1
 Row 3 sum = 1
-Right state_0 probability sum: 0.799809
-Right state_1 probability sum: 0.799809
-Error state_0 probability sum: 0.200191
-Error state_1 probability sum: 0.200191
-State of relay_0 : 0
-State of relay_1 : 0
-State of relay_2 : 0
-State of relay_3 : 0
-A_1 : 2
-h = 0.49773
+Right state_0 probability sum: 0.705633
+Right state_1 probability sum: 0.705633
+Error state_0 probability sum: 0.294367
+Error state_1 probability sum: 0.294367
+State of relay_0 = 0
+State of relay_1 = 0
+State of relay_2 = 0
+State of relay_3 = 0
+A_1 = 2
+p = 0.405098
+h = 0.481987
 
-A_2 : 1
-h = 0.715176
+A_2 = 1
+p = 0.405098
+h = 0.646091
 
-           state_0    state_1    state_2    state_3
-state_0 | 0.466311   0.333498   0.100095   0.100095
-state_1 | 0.505454   0.294355   0.100095   0.100095
-state_2 | 0.566407   0.333498          0   0.100095
-state_3 | 0.505454   0.394451   0.100095          0
+--------------------------------------------------
+Relay properties:
+           state_0    state_1    state_2    state_3    state_4    state_5
+state_0 | 0.240096   0.166772   0.151581   0.147184   0.147184   0.147184
+state_1 | 0.123786   0.157078   0.277585   0.147184   0.147184   0.147184
+state_2 | 0.226772   0.229346   0.102331   0.147184   0.147184   0.147184
+state_3 | 0.387279   0.166772   0.151581          0   0.147184   0.147184
+state_4 | 0.123786   0.304262   0.277585   0.147184          0   0.147184
+state_5 | 0.226772   0.229346   0.249515   0.147184   0.147184          0
 Row 0 sum = 1
 Row 1 sum = 1
 Row 2 sum = 1
 Row 3 sum = 1
-Right state_0 probability sum: 0.799809
-Right state_1 probability sum: 0.799809
-Error state_0 probability sum: 0.200191
-Error state_1 probability sum: 0.200191
-State of relay_0 : 0
-State of relay_1 : 0
-State of relay_2 : 0
-State of relay_3 : 0
-State of relay_4 : 0
-State of relay_5 : 0
-A_1 : 0
-h = 0
+Row 4 sum = 1
+Row 5 sum = 1
+Right state_0 probability sum: 0.558449
+Right state_1 probability sum: 0.558449
+Right state_2 probability sum: 0.558449
+Error state_0 probability sum: 0.441551
+Error state_1 probability sum: 0.441551
+Error state_2 probability sum: 0.441551
+State of relay_0 = 0
+State of relay_1 = 0
+State of relay_2 = 0
+State of relay_3 = 0
+A_1 = 2
+p = 0.240096
+h = 0.364899
 
-A_2 : 2
-h = 0.123868
+A_2 = 1
+p = 0.240096
+h = 0.422545
 
-A_3 : 4
-h = 0.340327
+--------------------------------------------------
+Relay properties:
+           state_0    state_1    state_2    state_3    state_4    state_5    state_6    state_7
+state_0 | 0.230992   0.171932   0.159696   0.113576   0.080951   0.080951   0.080951   0.080951
+state_1 | 0.122104   0.202526   0.174902   0.176664   0.080951   0.080951   0.080951   0.080951
+state_2 | 0.119808   0.197902   0.178004   0.180482   0.080951   0.080951   0.080951   0.080951
+state_3 | 0.237846  0.0917846   0.195381   0.151184   0.080951   0.080951   0.080951   0.080951
+state_4 | 0.311943   0.171932   0.159696   0.113576          0   0.080951   0.080951   0.080951
+state_5 | 0.122104   0.283477   0.174902   0.176664   0.080951          0   0.080951   0.080951
+state_6 | 0.119808   0.197902   0.258955   0.180482   0.080951   0.080951          0   0.080951
+state_7 | 0.237846  0.0917846   0.195381   0.232135   0.080951   0.080951   0.080951          0
+Row 0 sum = 1
+Row 1 sum = 1
+Row 2 sum = 1
+Row 3 sum = 1
+Row 4 sum = 1
+Row 5 sum = 1
+Row 6 sum = 1
+Row 7 sum = 1
+Right state_0 probability sum: 0.676196
+Right state_1 probability sum: 0.676196
+Right state_2 probability sum: 0.676196
+Right state_3 probability sum: 0.676196
+Error state_0 probability sum: 0.323804
+Error state_1 probability sum: 0.323804
+Error state_2 probability sum: 0.323804
+Error state_3 probability sum: 0.323804
+State of relay_0 = 0
+State of relay_1 = 0
+State of relay_2 = 0
+State of relay_3 = 0
+A_1 = 2
+p = 0.230992
+h = 0.355269
 
-A_4 : 1
-h = 0.38761
-
+A_2 = 1
+p = 0.230992
+h = 0.408627
